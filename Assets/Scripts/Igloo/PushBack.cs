@@ -28,7 +28,7 @@ public class PushBack : MonoBehaviour
             Vector3 pushDirection = (transform.position - collision.contacts[0].point).normalized;
 
             // Apply immediate force in the push direction
-            rb.velocity = pushDirection * pushBackForce;
+            rb.linearVelocity = pushDirection * pushBackForce;
 
             // Start the damping process
             isBeingPushed = true;
@@ -48,12 +48,12 @@ public class PushBack : MonoBehaviour
         if (isBeingPushed)
         {
             // Gradually reduce the velocity to simulate friction
-            rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, dampingFactor * Time.deltaTime);
+            rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, Vector3.zero, dampingFactor * Time.deltaTime);
 
             // Stop movement completely if velocity is very small
-            if (rb.velocity.magnitude < 0.1f)
+            if (rb.linearVelocity.magnitude < 0.1f)
             {
-                rb.velocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
                 isBeingPushed = false; // End the pushback
             }
         }

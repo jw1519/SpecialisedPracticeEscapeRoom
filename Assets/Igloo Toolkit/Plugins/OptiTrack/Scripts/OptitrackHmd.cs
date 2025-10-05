@@ -211,7 +211,7 @@ public class OptitrackHmd : MonoBehaviour
     public static bool isPresent()
     {
         var xrDisplaySubsystems = new List<XRDisplaySubsystem>();
-        SubsystemManager.GetInstances<XRDisplaySubsystem>(xrDisplaySubsystems);
+        SubsystemManager.GetSubsystems<XRDisplaySubsystem>(xrDisplaySubsystems);
         foreach (var xrDisplay in xrDisplaySubsystems)
         {
             if (xrDisplay.running)
