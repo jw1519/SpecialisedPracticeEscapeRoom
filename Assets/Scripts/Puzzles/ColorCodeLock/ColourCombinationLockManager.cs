@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class ColourCombinationLockManager : MonoBehaviour
@@ -6,7 +8,7 @@ public class ColourCombinationLockManager : MonoBehaviour
     public string[] currentCombination;
     void Start()
     {
-        Rotation.Rotated += CheckCombination;
+        Rotation.Rotated += OnRotated;
         //set initial combination to all LightBlue as its the starting colour
         currentCombination = new string[correctCombination.Length];
         for (int i = 0; i < currentCombination.Length; i++)
@@ -14,7 +16,12 @@ public class ColourCombinationLockManager : MonoBehaviour
             currentCombination[i] = "LightBlue";
         }
     }
-    public void CheckCombination(string wheelName, string colour)
+    private void OnRotated(string wheelName, string colour)
+    {
+        StartCoroutine(CheckCombination(wheelName, colour));
+    }
+
+    public IEnumerator CheckCombination(string wheelName, string colour)
     {
         switch (wheelName)
         {
@@ -34,7 +41,8 @@ public class ColourCombinationLockManager : MonoBehaviour
         if (IsCombinationCorrect())
         {
             Debug.Log("Combination Correct! Lock Opened.");
-            // Add logic to open the lock or trigger an event
+            yield return new WaitForSeconds(1f);
+            Destroy(gameObject); //when code is correct destroy the lock
         }
     }
     public bool IsCombinationCorrect()
