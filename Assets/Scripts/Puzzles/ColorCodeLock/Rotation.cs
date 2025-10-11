@@ -10,9 +10,9 @@ public class Rotation : MonoBehaviour
     public Transform pivotPoint;
     private void Start()
     {
-        currentColor = colors[0];
         // Define the color sequence
         colors = new List<string> { "LightBlue", "Green", "Yellow", "Pink", "DarkBlue", "Red" };
+        currentColor = colors[0];
     }
     public void Rotate()
     {

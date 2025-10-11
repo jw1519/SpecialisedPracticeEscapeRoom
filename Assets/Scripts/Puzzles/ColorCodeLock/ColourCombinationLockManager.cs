@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class ColourCombinationLockManager : MonoBehaviour
 {
+    public static event Action CombinationCorrect;
     public string[] correctCombination;
     public string[] currentCombination;
     void Start()
@@ -34,6 +36,7 @@ public class ColourCombinationLockManager : MonoBehaviour
         if (IsCombinationCorrect())
         {
             Debug.Log("Combination Correct! Lock Opened.");
+            CombinationCorrect?.Invoke();
             Destroy(gameObject);
         }
     }
