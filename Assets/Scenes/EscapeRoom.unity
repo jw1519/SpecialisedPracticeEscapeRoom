@@ -620,13 +620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78afff046c860f43b185328f8af840d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - Red
-  - Green
-  - Blue
-  - Yellow
-  - Cyan
-  - Magenta
   currentColor: LightBlue
   pivotPoint: {fileID: 2048989956}
 --- !u!1 &90159458
@@ -3449,13 +3442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78afff046c860f43b185328f8af840d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - LightBlue
-  - Green
-  - Yellow
-  - Pink
-  - DarkBlue
-  - Red
   currentColor: LightBlue
   pivotPoint: {fileID: 153286084}
 --- !u!65 &1124790276
@@ -4252,13 +4238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78afff046c860f43b185328f8af840d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - Red
-  - Green
-  - Blue
-  - Yellow
-  - Cyan
-  - Magenta
   currentColor: LightBlue
   pivotPoint: {fileID: 409114611}
 --- !u!1 &1592060040
@@ -4783,13 +4762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78afff046c860f43b185328f8af840d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - Red
-  - Green
-  - Blue
-  - Yellow
-  - Cyan
-  - Magenta
   currentColor: LightBlue
   pivotPoint: {fileID: 1748294050}
 --- !u!1 &1799062615
