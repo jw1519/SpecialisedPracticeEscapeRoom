@@ -24,5 +24,4 @@ public class Rotation : MonoBehaviour
     {
         Rotate();
     }
-
 }

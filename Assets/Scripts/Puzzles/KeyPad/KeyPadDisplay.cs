@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-
 public class KeyPadDisplay : MonoBehaviour
 {
     public TextMeshPro text;
