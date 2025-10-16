@@ -33,5 +33,9 @@ public class ZoomManager : MonoBehaviour
             zoom.ZoomOut();
             currentZooms.Remove(zoom);
         }
+        if (currentZooms.Count == 0)
+        {
+            GyroManager.Instance.EnableGyro();
+        }
     }
 }

@@ -19,7 +19,6 @@ public class GyroManager : MonoBehaviour
             Destroy(gameObject);
         }
         isGyroActive = false;
-        Zoom.OnZoom += DisableGyro;
     }
     public void EnableGyro()
     { 

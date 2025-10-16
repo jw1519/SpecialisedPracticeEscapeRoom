@@ -21,7 +21,7 @@ public class Zoom : MonoBehaviour
         {
             collider.enabled = false;
         }
-        OnZoom?.Invoke();
+        GyroManager.Instance.DisableGyro();
         cam.transform.LookAt(transform, Vector3.up);
         ZoomManager.Instance.RegisterZoom(this);
     }
