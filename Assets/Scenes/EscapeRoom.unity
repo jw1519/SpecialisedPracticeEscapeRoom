@@ -1486,7 +1486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &575143590
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1622,7 +1622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d988035f161606c46afe4c5dfbdfab00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomLevel: 1
 --- !u!65 &583909873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2974,6 +2973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentZooms: []
+  zoomOutButton: {fileID: 575143591}
 --- !u!4 &1018362258
 Transform:
   m_ObjectHideFlags: 0
@@ -3687,7 +3687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d988035f161606c46afe4c5dfbdfab00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomLevel: 1
 --- !u!4 &1235421531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8279290154444453107, guid: cd27d2f3845bbf54e80a6b037fdf61e0, type: 3}
@@ -5027,7 +5026,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d988035f161606c46afe4c5dfbdfab00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomLevel: 1
 --- !u!1001 &3360514128534193924
 PrefabInstance:
   m_ObjectHideFlags: 0

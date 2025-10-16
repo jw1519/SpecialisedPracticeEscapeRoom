@@ -1,11 +1,13 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZoomManager : MonoBehaviour
 {
     public static ZoomManager Instance;
     public List<Zoom> currentZooms = new List<Zoom>();
+    public Button zoomOutButton;
     private void Awake()
     {
         if (Instance == null)
@@ -24,6 +26,11 @@ public class ZoomManager : MonoBehaviour
         {
             currentZooms.Add(zoom);
         }
+        if (currentZooms.Count > 0)
+        {
+            GyroManager.Instance.DisableGyro();
+            zoomOutButton.gameObject.SetActive(true);
+        }
     }
     public void UnregisterZoom()
     {
@@ -36,6 +43,7 @@ public class ZoomManager : MonoBehaviour
         if (currentZooms.Count == 0)
         {
             GyroManager.Instance.EnableGyro();
+            zoomOutButton.gameObject.SetActive(false);
         }
     }
 }
