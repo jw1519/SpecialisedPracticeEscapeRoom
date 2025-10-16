@@ -4,9 +4,12 @@ public class KeyPadDisplay : MonoBehaviour
 {
     public TextMeshPro text;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        text.text = KeyPad.playerInput;
+        KeyPad.inputChanged += UpdateDisplay;
+    }
+    public void UpdateDisplay(string playerInput)
+    {
+        text.text = playerInput;
     }
 }
