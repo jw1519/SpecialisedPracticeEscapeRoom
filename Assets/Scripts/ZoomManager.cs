@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,6 +43,15 @@ public class ZoomManager : MonoBehaviour
         {
             GyroManager.Instance.EnableGyro();
             zoomOutButton.gameObject.SetActive(false);
+            Camera.main.fieldOfView = 60; //reset to default zoom
+            Camera.main.transform.rotation = Quaternion.Euler(0, 0, 0); //reset rotation
+            Camera.main.transform.position = new Vector3(0, 1, 0); //reset position
+        }
+        else //zoom to the previous zoom
+        {
+            Zoom zoom = currentZooms[currentZooms.Count - 1];
+            if (zoom == null) UnregisterZoom();
+            zoom.ZoomIn();
         }
     }
 }

@@ -1622,6 +1622,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d988035f161606c46afe4c5dfbdfab00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomView: 10
+  rotation: {x: -5, y: 0, z: 0, w: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &583909873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3664,6 +3667,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1080262744445832912, guid: cd27d2f3845bbf54e80a6b037fdf61e0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1723375231}
+    - targetCorrespondingSourceObject: {fileID: 1080262744445832912, guid: cd27d2f3845bbf54e80a6b037fdf61e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1723375236}
   m_SourcePrefab: {fileID: 100100000, guid: cd27d2f3845bbf54e80a6b037fdf61e0, type: 3}
 --- !u!1 &1235421522 stripped
 GameObject:
@@ -3687,6 +3693,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d988035f161606c46afe4c5dfbdfab00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomView: 50
+  rotation: {x: -10, y: 0, z: 0, w: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1235421531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8279290154444453107, guid: cd27d2f3845bbf54e80a6b037fdf61e0, type: 3}
@@ -4226,6 +4235,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.35589087, y: 0.23192199, z: 0.32075846}
   m_Center: {x: 0.11642875, y: -0.11596098, z: -0.00000010430813}
+--- !u!114 &1723375236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723375227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d988035f161606c46afe4c5dfbdfab00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomView: 15
+  rotation: {x: 20, y: 0, z: 0, w: 0}
+  targetPosition: {x: -0.06, y: 1.4, z: -0.5}
 --- !u!1 &1761818880
 GameObject:
   m_ObjectHideFlags: 0
@@ -5026,6 +5050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d988035f161606c46afe4c5dfbdfab00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomView: 30
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &3360514128534193924
 PrefabInstance:
   m_ObjectHideFlags: 0
