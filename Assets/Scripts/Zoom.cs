@@ -6,7 +6,7 @@ public class Zoom : MonoBehaviour
     public static event Action OnZoom;
     Collider collider;
     public int zoomLevel = 1;
-    Camera camera => Camera.main;
+    Camera cam => Camera.main;
     private void Awake()
     {
         collider = GetComponent<Collider>();
@@ -19,17 +19,17 @@ public class Zoom : MonoBehaviour
     {
         if (collider != null)
         {
-            collider.isTrigger = false;
+            collider.enabled = false;
         }
-        Debug.Log("Zooming in");
-        camera.transform.position = new Vector3(0, .86f, -.4f);
         OnZoom?.Invoke();
+        cam.transform.LookAt(transform, Vector3.up);
+        ZoomManager.Instance.RegisterZoom(this);
     }
     public void ZoomOut()
     {
         if (collider != null)
         {
-            collider.isTrigger = true;
+            collider.enabled = true;
         }
         Debug.Log("Zooming out");
     }
