@@ -22,6 +22,13 @@ public class Zoom : MonoBehaviour
         {
             collider.enabled = false;
         }
+
+        // Apply target position if specified
+        if (targetPosition != Vector3.zero)
+        {
+            cam.transform.position = targetPosition;
+        }
+
         cam.transform.LookAt(transform, Vector3.up);
         ZoomManager.Instance.RegisterZoom(this);
         cam.fieldOfView = zoomView;
@@ -40,12 +47,6 @@ public class Zoom : MonoBehaviour
             currentRotation.z += rotation.z;
         }
         cam.transform.rotation = Quaternion.Euler(currentRotation);
-
-        // Apply target position if specified
-        if (targetPosition != Vector3.zero)
-        {
-            cam.transform.position = targetPosition;
-        }
     }
     public void ZoomOut()
     {
