@@ -14,9 +14,14 @@ public class CameraController : MonoBehaviour
         rotator = new GameObject("rotator").transform;
         rotator.SetPositionAndRotation(transform.position, transform.rotation);
     }
+    private void Start()
+    {
+        GyroManager.Instance.EnableGyro();
+    }
     private void FixedUpdate()
     {
         if (!GyroManager.Instance.isGyroActive) return;
+        transform.localRotation = GyroManager.Instance.rotation;
         Move();
         LookAround();
     }

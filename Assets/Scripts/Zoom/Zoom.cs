@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class Zoom : MonoBehaviour
 {
-    Collider collider;
+    Collider zoomCollider;
     public int zoomView;
     public Quaternion rotation;
     public Vector3 targetPosition;
     Camera cam => Camera.main;
     private void Awake()
     {
-        collider = GetComponent<Collider>();
+        zoomCollider = GetComponent<Collider>();
     }
     private void OnMouseDown()
     {
@@ -18,9 +18,9 @@ public class Zoom : MonoBehaviour
     }
     public void ZoomIn()
     {
-        if (collider != null)
+        if (zoomCollider != null)
         {
-            collider.enabled = false;
+            zoomCollider.enabled = false;
         }
 
         // Apply target position if specified
@@ -50,9 +50,9 @@ public class Zoom : MonoBehaviour
     }
     public void ZoomOut()
     {
-        if (collider != null)
+        if (zoomCollider != null)
         {
-            collider.enabled = true;
+            zoomCollider.enabled = true;
         }
         Debug.Log("Zooming out");
     }

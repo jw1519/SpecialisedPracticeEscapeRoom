@@ -55,8 +55,6 @@ public class GyroManager : MonoBehaviour
         {
             rotation = gyroscope.attitude;
             rotation = new Quaternion(0, gyroscope.attitude.y, 0, -gyroscope.attitude.w);
-            Vector3 acceleration = Accelerometer.current.acceleration.ReadValue();
-            Vector3 attatude = AttitudeSensor.current.attitude.ReadValue().eulerAngles;
         }
     }
 }
