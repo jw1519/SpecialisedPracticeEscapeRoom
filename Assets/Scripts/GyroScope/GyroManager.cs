@@ -1,12 +1,12 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class GyroManager : MonoBehaviour
 {
     public static GyroManager Instance;
-    Gyroscope gyroscope;
+    UnityEngine.Gyroscope gyroscope;
     public Quaternion rotation;
     public bool isGyroActive;
-
+    
     private void Awake()
     {
         if (Instance == null)
@@ -29,6 +29,8 @@ public class GyroManager : MonoBehaviour
             gyroscope = Input.gyro;
             gyroscope.enabled = true;
             isGyroActive = gyroscope.enabled;
+            InputSystem.EnableDevice(Accelerometer.current);
+            InputSystem.EnableDevice(AttitudeSensor.current);
         }
         else
         {
@@ -43,6 +45,8 @@ public class GyroManager : MonoBehaviour
         {
             gyroscope.enabled = false;
             isGyroActive = gyroscope.enabled;
+            InputSystem.DisableDevice(Accelerometer.current);
+            InputSystem.DisableDevice(AttitudeSensor.current);
         }
     }
     private void Update()
@@ -51,6 +55,8 @@ public class GyroManager : MonoBehaviour
         {
             rotation = gyroscope.attitude;
             rotation = new Quaternion(0, gyroscope.attitude.y, 0, -gyroscope.attitude.w);
+            Vector3 acceleration = Accelerometer.current.acceleration.ReadValue();
+            Vector3 attatude = AttitudeSensor.current.attitude.ReadValue().eulerAngles;
         }
     }
 }
