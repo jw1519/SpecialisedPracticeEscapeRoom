@@ -12,11 +12,6 @@ public class GyroManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
         isGyroActive = false;
     }

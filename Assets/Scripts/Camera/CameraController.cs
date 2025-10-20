@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         rotator = new GameObject("rotator").transform;
         rotator.SetPositionAndRotation(transform.position, transform.rotation);
+        rotator.SetParent(transform);
     }
     private void Start()
     {

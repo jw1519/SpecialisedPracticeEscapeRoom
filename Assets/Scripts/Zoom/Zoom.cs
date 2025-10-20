@@ -22,13 +22,11 @@ public class Zoom : MonoBehaviour
         {
             zoomCollider.enabled = false;
         }
-
         // Apply target position if specified
         if (targetPosition != Vector3.zero)
         {
             cam.transform.position = targetPosition;
         }
-
         cam.transform.LookAt(transform, Vector3.up);
         ZoomManager.Instance.RegisterZoom(this);
         cam.fieldOfView = zoomView;

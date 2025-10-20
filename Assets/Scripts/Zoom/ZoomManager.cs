@@ -7,19 +7,13 @@ public class ZoomManager : MonoBehaviour
     public static ZoomManager Instance;
     public List<Zoom> currentZooms = new List<Zoom>();
     public Button zoomOutButton;
-    Camera cam;
+    Camera cam => Camera.main;
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-        cam = Camera.main;
     }
     public void RegisterZoom(Zoom zoom)
     {
@@ -47,6 +41,7 @@ public class ZoomManager : MonoBehaviour
             zoomOutButton.gameObject.SetActive(false);
             cam.fieldOfView = 60; //reset to default zoom
             cam.transform.position = new Vector3(0, 1, 0);
+            Debug.Log(transform.position);
         }
         else //zoom to the previous zoom
         {
