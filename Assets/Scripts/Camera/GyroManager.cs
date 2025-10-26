@@ -38,10 +38,7 @@ public class GyroManager : MonoBehaviour
         if (!isGyroActive) return;
         if (SystemInfo.supportsGyroscope)
         {
-            gyroscope.enabled = false;
-            isGyroActive = gyroscope.enabled;
-            InputSystem.DisableDevice(Accelerometer.current);
-            InputSystem.DisableDevice(AttitudeSensor.current);
+            isGyroActive = false;
         }
     }
     private void Update()

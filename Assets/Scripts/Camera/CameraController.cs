@@ -5,15 +5,11 @@ public class CameraController : MonoBehaviour
 {
     public int movementSpeed;
     Transform rotator;
-    float smoothing = 0.1f;
     CharacterController characterController;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        rotator = new GameObject("rotator").transform;
-        rotator.SetPositionAndRotation(transform.position, transform.rotation);
-        rotator.SetParent(transform);
     }
     private void Start()
     {
@@ -24,7 +20,6 @@ public class CameraController : MonoBehaviour
         if (!GyroManager.Instance.isGyroActive) return;
         transform.localRotation = GyroManager.Instance.rotation;
         Move();
-        LookAround();
     }
     void Move()
     {
@@ -34,15 +29,5 @@ public class CameraController : MonoBehaviour
         Vector3 transformedDirection = transform.TransformDirection(moveDirection);
 
         characterController.Move(transformedDirection);
-    }
-    private void LookAround()
-    {
-        Quaternion attitude = AttitudeSensor.current.attitude.ReadValue();
-
-        rotator.rotation = attitude;
-        rotator.Rotate(0f, 0f, 180f, Space.Self);
-        rotator.Rotate(90f, 180f, 0f, Space.World);
-
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotator.rotation, smoothing);
     }
 }
