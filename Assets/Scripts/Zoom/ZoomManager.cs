@@ -7,6 +7,7 @@ public class ZoomManager : MonoBehaviour
     public static ZoomManager Instance;
     public List<Zoom> currentZooms = new List<Zoom>();
     public Button zoomOutButton;
+    float delay;
     Camera cam => Camera.main;
     private void Awake()
     {
@@ -15,8 +16,17 @@ public class ZoomManager : MonoBehaviour
             Instance = this;
         }
     }
+    private void Update()
+    {
+        delay = delay + Time.deltaTime;
+    }
     public void RegisterZoom(Zoom zoom)
     {
+        if (delay < 1) return; //delay this working so it has time to unregister zooms
+        else
+        {
+            delay = 0;
+        }
         if (!currentZooms.Contains(zoom))
         {
             currentZooms.Add(zoom);
@@ -29,6 +39,11 @@ public class ZoomManager : MonoBehaviour
     }
     public void UnregisterZoom()
     {
+        if (delay < 1) return;
+        else
+        {
+            delay = 0;
+        }
         if (currentZooms.Count > 0)
         {
             Zoom zoom = currentZooms[currentZooms.Count - 1];

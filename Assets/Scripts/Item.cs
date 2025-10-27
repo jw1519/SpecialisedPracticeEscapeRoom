@@ -8,5 +8,6 @@ public class Item : MonoBehaviour
     {
         //put item in invent
         Debug.Log("Item picked up");
+        Destroy(gameObject);
     }
 }

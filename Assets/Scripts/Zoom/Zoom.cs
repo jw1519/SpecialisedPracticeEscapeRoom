@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Zoom : MonoBehaviour
 {
@@ -18,6 +18,10 @@ public class Zoom : MonoBehaviour
     }
     public void ZoomIn()
     {
+        if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        {
+            return;
+        }
         if (zoomCollider != null)
         {
             zoomCollider.enabled = false;
@@ -34,15 +38,15 @@ public class Zoom : MonoBehaviour
         Vector3 currentRotation = cam.transform.rotation.eulerAngles;
         if (rotation.x != 0)
         {
-            currentRotation.x += rotation.x;
+            currentRotation.x = rotation.x;
         }
         else if (rotation.y != 0)
         {
-            currentRotation.y += rotation.y;
+            currentRotation.y = rotation.y;
         }
         else if (rotation.z != 0)
         {
-            currentRotation.z += rotation.z;
+            currentRotation.z = rotation.z;
         }
         cam.transform.rotation = Quaternion.Euler(currentRotation);
     }
