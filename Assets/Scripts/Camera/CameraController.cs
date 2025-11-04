@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class CameraController : MonoBehaviour
 {
     public int movementSpeed;
-    Transform rotator;
     CharacterController characterController;
 
     private void Awake()
