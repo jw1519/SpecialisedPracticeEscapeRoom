@@ -6,8 +6,8 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
     InventoryUIManager uiManager;
-    public List<Item> items;
-    public Item selectedItem;
+    List<Item> items;
+    Item selectedItem;
 
     private void Awake()
     {
@@ -32,6 +32,13 @@ public class Inventory : MonoBehaviour
     public void RemoveItem(Item item)
     {
         items.Remove(item);
+        uiManager.RemoveItem(item);
         Debug.Log("Item Removed from Inventory");
+    }
+    public void SelectItem(Item item)
+    {
+        uiManager.SelectItem(item);
+        selectedItem = item;
+        Debug.Log("Item Selected: " + item.itemName);
     }
 }

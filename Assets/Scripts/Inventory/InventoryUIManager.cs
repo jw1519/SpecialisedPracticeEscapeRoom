@@ -33,4 +33,9 @@ public class InventoryUIManager : MonoBehaviour
             }
         }
     }
+    public void SelectItem(Item item)
+    {
+        Debug.Log("Item Selected in UI: " + item.itemName);
+        //change background color of selected item
+    }
 }
