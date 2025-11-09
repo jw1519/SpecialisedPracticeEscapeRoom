@@ -5,12 +5,11 @@ public class RevealLightSource : MonoBehaviour
 {
     public Material revealMaterial;
     public Light lightSource;
-    float originalSpotAngle;
+    float originalSpotAngle = 60f;
     private void Awake()
     {
         lightSource = GetComponent<Light>();
         lightSource.color = Color.magenta;
-        originalSpotAngle = lightSource.spotAngle;
     }
     // Update is called once per frame
     void Update()

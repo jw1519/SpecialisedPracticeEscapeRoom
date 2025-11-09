@@ -1,17 +1,22 @@
 using UnityEngine;
 
-public class Item : MonoBehaviour
+[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
+public class Item : ScriptableObject
 {
     public string itemName;
-    public int itemID;
+    public string itemID;
     public Sprite itemIcon;
     public GameObject itemPrefab;
-
-    private void OnMouseDown()
+    private void OnValidate()
     {
-        //put item in invent
-        Debug.Log("Item picked up");
-        Inventory.Instance.AddItem(this);
-        Destroy(gameObject);
+        if (string.IsNullOrEmpty(itemID))
+        {
+            //create unique id for item
+            itemID = itemName + "-" + System.Guid.NewGuid().ToString();
+        }
+    }
+    public virtual void SelectItem()
+    {
+        Inventory.Instance.SelectItem(this);
     }
 }

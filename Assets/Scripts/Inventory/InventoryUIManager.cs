@@ -18,9 +18,14 @@ public class InventoryUIManager : MonoBehaviour
         GameObject itemContainer = Instantiate(this.itemContainer);
         itemContainer.transform.parent = inventoryContainer.transform;
 
+        //set item icon and name
         Image itemImage = itemContainer.GetComponent<Image>();
         itemImage.sprite = item.itemIcon;
         itemContainer.name = item.itemName;
+
+        //add button listener
+        Button itemButton = itemContainer.GetComponent<Button>();
+        itemButton.onClick.AddListener(() => Inventory.Instance.SelectItem(item));
     }
     public void RemoveItem(Item item)
     {
