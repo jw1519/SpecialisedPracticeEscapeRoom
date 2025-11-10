@@ -22,11 +22,14 @@ public class CameraController : MonoBehaviour
     }
     void Move()
     {
-        Vector3 acceleration = Accelerometer.current.acceleration.ReadValue();
+        if (characterController != null)
+        {
+            Vector3 acceleration = Accelerometer.current.acceleration.ReadValue();
 
-        Vector3 moveDirection = new(acceleration.x * movementSpeed * Time.deltaTime, 0, -acceleration.z * movementSpeed * Time.deltaTime);
-        Vector3 transformedDirection = transform.TransformDirection(moveDirection);
+            Vector3 moveDirection = new(acceleration.x * movementSpeed * Time.deltaTime, 0, -acceleration.z * movementSpeed * Time.deltaTime);
+            Vector3 transformedDirection = transform.TransformDirection(moveDirection);
 
-        characterController.Move(transformedDirection);
+            characterController.Move(transformedDirection);
+        }
     }
 }

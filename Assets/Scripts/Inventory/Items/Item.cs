@@ -19,4 +19,8 @@ public class Item : ScriptableObject
     {
         Inventory.Instance.SelectItem(this);
     }
+    public virtual void UseItem()
+    {
+        Debug.Log("Use Item here");
+    }
 }

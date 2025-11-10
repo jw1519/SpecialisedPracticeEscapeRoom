@@ -14,7 +14,6 @@ public class WorldItem : MonoBehaviour
     private void OnMouseDown()
     {
         //put item in invent
-        Debug.Log("Item picked up");
         Inventory.Instance.AddItem(itemSO);
         Destroy(gameObject);
     }

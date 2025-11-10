@@ -15,8 +15,8 @@ public class InventoryUIManager : MonoBehaviour
     }
     public void AddItem(Item item)
     {
-        GameObject itemContainer = Instantiate(this.itemContainer);
-        itemContainer.transform.parent = inventoryContainer.transform;
+        GameObject itemContainer = Instantiate(this.itemContainer, inventoryContainer.transform);
+        //itemContainer.transform.parent = inventoryContainer.transform;
 
         //set item icon and name
         Image itemImage = itemContainer.GetComponent<Image>();

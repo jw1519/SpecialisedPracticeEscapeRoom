@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
     InventoryUIManager uiManager;
-    List<Item> items;
+    public List<Item> items;
     Item selectedItem;
 
     private void Awake()
@@ -20,7 +20,6 @@ public class Inventory : MonoBehaviour
             Destroy(gameObject);
         }
         uiManager = GetComponent<InventoryUIManager>();
-        AddItem(selectedItem);
     }
 
     public void AddItem(Item item)
@@ -39,6 +38,7 @@ public class Inventory : MonoBehaviour
     {
         uiManager.SelectItem(item);
         selectedItem = item;
+        item.UseItem();
         Debug.Log("Item Selected: " + item.itemName);
     }
 }
