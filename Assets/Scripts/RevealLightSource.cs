@@ -16,7 +16,6 @@ public class RevealLightSource : MonoBehaviour
             TurnLightOnOrOff();
         }
     }
-    // Update is called once per frame
     void Update()
     {
         if (lightSource != null && lightSource.enabled == true)

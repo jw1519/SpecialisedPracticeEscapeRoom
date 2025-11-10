@@ -1,4 +1,4 @@
-using NUnit.Framework;
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
     public static Inventory Instance;
     InventoryUIManager uiManager;
     public List<Item> items;
-    Item selectedItem;
+    [HideInInspector] public Item selectedItem;
 
     private void Awake()
     {
