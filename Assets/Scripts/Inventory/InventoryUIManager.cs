@@ -15,13 +15,12 @@ public class InventoryUIManager : MonoBehaviour
     }
     public void AddItem(Item item)
     {
-        GameObject itemContainer = Instantiate(this.itemContainer);
-        itemContainer.transform.parent = inventoryContainer.transform;
+        GameObject itemContainer = Instantiate(this.itemContainer, inventoryContainer.transform);
 
         //set item icon and name
         Image itemImage = itemContainer.GetComponent<Image>();
         itemImage.sprite = item.itemIcon;
-        itemContainer.name = item.itemName;
+        itemContainer.name = item.itemID;
 
         //add button listener
         Button itemButton = itemContainer.GetComponent<Button>();
@@ -29,9 +28,10 @@ public class InventoryUIManager : MonoBehaviour
     }
     public void RemoveItem(Item item)
     {
-        foreach (Transform child in itemContainer.transform)
+        foreach (RectTransform child in inventoryContainer.transform)
         {
-            if (child.name == item.itemIcon.name)
+            Debug.Log(item.itemName);
+            if (child.name == item.itemID)
             {
                 Destroy(child.gameObject);
                 break;
