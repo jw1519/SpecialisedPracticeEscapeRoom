@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: ChessPiece
+  m_Name: BlackRook
   m_EditorClassIdentifier: 
-  itemName: Chess Piece
-  itemID: Chess Piece-dc83965f-b9c2-4220-9fa7-e28402a6c0a1
+  itemName: BlackRook
+  itemID: BlackRook-c61bd7d5-04f3-4049-b042-d6a81c541d82
   itemIcon: {fileID: 0}
   itemPrefab: {fileID: 8676559380820348568, guid: 4a464379a3f8b1a4782f9cb4dd42c13b, type: 3}

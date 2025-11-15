@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 595935920363964968}
+  - component: {fileID: -349860834146740418}
   m_Layer: 0
   m_Name: kingLowPoly2 2
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   - {fileID: 8792901082306649168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-349860834146740418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2410920027267053739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f164e7b75fd4074fbc75b54ec9273c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSO: {fileID: 11400000, guid: 5c339e616f9f8a645ae4c64762359d68, type: 2}
 --- !u!1 &7005686999611222617
 GameObject:
   m_ObjectHideFlags: 0
