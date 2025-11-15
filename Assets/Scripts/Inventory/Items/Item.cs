@@ -7,6 +7,7 @@ public class Item : ScriptableObject
     public string itemID;
     public Sprite itemIcon;
     public GameObject itemPrefab;
+    public bool isInCorrectPosition; 
     private void OnValidate()
     {
         if (string.IsNullOrEmpty(itemID))
