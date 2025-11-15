@@ -3,6 +3,7 @@ using UnityEngine;
 public class ItemPoint : MonoBehaviour
 {
     public Item itemNeeded;
+    public GameObject manager;
 
     private void OnMouseDown()
     {
@@ -14,9 +15,11 @@ public class ItemPoint : MonoBehaviour
     }
     public void UseItemOnPoint(Item item)
     {
+        manager.GetComponent<ChessPuzzle>().UseItem(item);
         if (item.itemID == itemNeeded.itemID)
         {
             Inventory.Instance.RemoveItem(item);
+            item.isInCorrectPosition = true;
             Debug.Log("Item used here");
         }
         else

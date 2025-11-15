@@ -22,6 +22,10 @@ public class Item : ScriptableObject
     }
     public virtual void UseItem()
     {
-        Debug.Log("Use Item here");
+        
+    }
+    public virtual void PlaceItem(Vector3 spawn)
+    {
+        Instantiate(itemPrefab, spawn, Quaternion.identity);
     }
 }

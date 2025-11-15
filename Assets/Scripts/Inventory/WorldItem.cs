@@ -13,8 +13,9 @@ public class WorldItem : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        //put item in invent
+        //pick up item
         Inventory.Instance.AddItem(itemSO);
+        itemSO.isInCorrectPosition = false;
         Destroy(gameObject);
     }
 }
