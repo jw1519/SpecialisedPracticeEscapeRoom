@@ -18,10 +18,6 @@ public class Zoom : MonoBehaviour
     }
     public void ZoomIn()
     {
-        if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-        {
-            return;
-        }
         if (zoomCollider != null)
         {
             zoomCollider.enabled = false;

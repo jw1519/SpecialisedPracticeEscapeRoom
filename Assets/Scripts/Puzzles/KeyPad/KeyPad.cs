@@ -24,8 +24,9 @@ public class KeyPad : MonoBehaviour
             }
         }
     }
-    private void OnMouseUp()
+    private void OnMouseDown()
     {
+        Debug.Log("here");
         if (playerInput.Length != correctCode.Length)
         {
             playerInput += gameObject.name;

@@ -56,7 +56,7 @@ public class ZoomManager : MonoBehaviour
             zoomOutButton.gameObject.SetActive(false);
             cam.fieldOfView = 60; //reset to default zoom
             cam.transform.position = new Vector3(0, 1, 0);
-            Debug.Log(transform.position);
+            cam.transform.rotation = Quaternion.Euler(0, cam.transform.rotation.y, 0);
         }
         else //zoom to the previous zoom
         {
