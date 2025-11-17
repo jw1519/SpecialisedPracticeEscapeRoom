@@ -19,7 +19,8 @@ public class InventoryUIManager : MonoBehaviour
 
         //set item icon and name
         Image itemImage = itemContainer.GetComponent<Image>();
-        itemImage.sprite = item.itemIcon;
+        if (itemImage.sprite != null)
+            itemImage.sprite = item.itemIcon;
         itemContainer.name = item.itemID;
 
         //add button listener
@@ -42,5 +43,9 @@ public class InventoryUIManager : MonoBehaviour
     {
         Debug.Log("Item Selected in UI: " + item.itemName);
         //change background color of selected item
+    }
+    public void DeselectItem(Item item)
+    {
+        Debug.Log("Item Deselected in UI: " + item.itemName);
     }
 }

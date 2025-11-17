@@ -27,10 +27,6 @@ public class Draw : MonoBehaviour
     }
     public void OpenDraw()
     {
-        if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-        {
-            return;
-        }
         drawManager.CloseAllDraws();
         Vector3 move = new Vector3(-0.6f, 0, 0);
         transform.Translate(move * 0.5f);
