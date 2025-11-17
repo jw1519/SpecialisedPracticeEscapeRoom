@@ -24,8 +24,11 @@ public class Item : ScriptableObject
     {
         
     }
-    public virtual void PlaceItem(Vector3 spawn)
+    public virtual void PlaceItem(Transform parent)
     {
-        Instantiate(itemPrefab, spawn, Quaternion.identity);
+        GameObject prefab = Instantiate(itemPrefab, parent.transform.position, Quaternion.identity);
+        prefab.transform.SetParent(parent);
+        Inventory.Instance.RemoveItem(this);
+        Inventory.Instance.DeselectItem();
     }
 }

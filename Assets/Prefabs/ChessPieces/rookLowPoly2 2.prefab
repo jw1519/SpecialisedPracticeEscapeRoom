@@ -96,6 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1678613900550507806}
   - component: {fileID: 3468983835305424912}
+  - component: {fileID: 7924914711151128867}
   m_Layer: 0
   m_Name: rookLowPoly2 2
   m_TagString: Untagged
@@ -131,4 +132,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f164e7b75fd4074fbc75b54ec9273c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSO: {fileID: 0}
+  itemSO: {fileID: 11400000, guid: 9df7c71edfaea574da1ff477cfbb52f3, type: 2}
+--- !u!65 &7924914711151128867
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676559380820348568}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.3074841, z: 1}
+  m_Center: {x: 0, y: 0.48379004, z: 0}

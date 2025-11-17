@@ -16,4 +16,4 @@ MonoBehaviour:
   itemID: BlackRook-c61bd7d5-04f3-4049-b042-d6a81c541d82
   itemIcon: {fileID: 0}
   itemPrefab: {fileID: 8676559380820348568, guid: 4a464379a3f8b1a4782f9cb4dd42c13b, type: 3}
-  isInCorrectPosition: 0
+  isInCorrectPosition: 1

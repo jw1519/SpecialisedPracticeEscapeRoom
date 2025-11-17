@@ -13,14 +13,13 @@ public class ItemPoint : MonoBehaviour
             UseItemOnPoint(item);
         }
     }
-    public void UseItemOnPoint(Item item)
+    public virtual void UseItemOnPoint(Item item)
     {
-        manager.GetComponent<ChessPuzzle>().UseItem(item);
         if (item.itemID == itemNeeded.itemID)
         {
-            Inventory.Instance.RemoveItem(item);
             item.isInCorrectPosition = true;
-            Debug.Log("Item used here");
+            Inventory.Instance.RemoveItem(item);
+            Debug.Log("Item used");
         }
         else
             Debug.Log("cant use that here");

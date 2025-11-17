@@ -19,21 +19,30 @@ public class ChessPuzzle : MonoBehaviour
         }
         return true;
     }
-    public void UseItem(Item item)
+    public void UseItem(Item item, ItemPoint itemPoint)
     {
         foreach (var piece in chessPieces)
         {
+            //check if item is part of this puzzle
             if (piece.itemID == item.itemID)
             {
-                Inventory.Instance.RemoveItem(item);
-                Vector3 position = itemPoints.Find(itemPoint => item == itemPoint.itemNeeded).transform.position;
-                Debug.Log(position);
-                item.PlaceItem(position);
+                //check if item is in correct spot
+                if (piece.itemID == itemPoint.itemNeeded.itemID)
+                {
+                    item.isInCorrectPosition = true;
+                }
+                else
+                {
+                    item.isInCorrectPosition = false;
+                }
+                //place item
+                item.PlaceItem(itemPoint.transform);
                 Debug.Log("Placed");
-                return;
             }
-            
         }
-        Debug.Log("This item does not belong to the chess puzzle.");
+        if (IsPuzzleSolved())
+        {
+            //its solved
+        }
     }
 }

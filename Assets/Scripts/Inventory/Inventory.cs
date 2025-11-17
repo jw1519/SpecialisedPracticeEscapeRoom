@@ -43,13 +43,17 @@ public class Inventory : MonoBehaviour
         // make sure to deselect anything already selected
         if (selectedItem != null)
         {
-            uiManager.DeselectItem(selectedItem);
-            selectedItem = null;
+            DeselectItem();
         }
         //select item
         uiManager.SelectItem(item);
         selectedItem = item;
         item.UseItem();
         Debug.Log("Item Selected: " + item.itemName);
+    }
+    public void DeselectItem()
+    {
+        uiManager.DeselectItem(selectedItem);
+        selectedItem = null;
     }
 }
