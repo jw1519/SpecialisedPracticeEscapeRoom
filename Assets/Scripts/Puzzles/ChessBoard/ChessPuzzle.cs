@@ -42,7 +42,7 @@ public class ChessPuzzle : MonoBehaviour
         }
         if (IsPuzzleSolved())
         {
-            //its solved
+            Debug.Log("chess puzzle done");
         }
     }
 }

@@ -359,7 +359,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 997416804}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9995738
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3969,7 +3969,7 @@ GameObject:
   - component: {fileID: 1122414004}
   - component: {fileID: 1122414003}
   - component: {fileID: 1122414002}
-  - component: {fileID: 1122414001}
+  - component: {fileID: 1122414005}
   m_Layer: 0
   m_Name: ItemPoint3
   m_TagString: Untagged
@@ -3992,20 +3992,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 332140654}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1122414001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122413999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemNeeded: {fileID: 11400000, guid: 9df7c71edfaea574da1ff477cfbb52f3, type: 2}
-  manager: {fileID: 1607201875}
 --- !u!135 &1122414002
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4080,6 +4066,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122413999}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1122414005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122413999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dd2a6a9bbf6ae48a1db81ce26cee03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNeeded: {fileID: 11400000, guid: 8209ae90b4186e14abd0a476560854df, type: 2}
+  manager: {fileID: 1607201875}
 --- !u!1 &1191176372
 GameObject:
   m_ObjectHideFlags: 0
@@ -4198,7 +4198,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1191176372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
+  m_Script: {fileID: 11500000, guid: 01dd2a6a9bbf6ae48a1db81ce26cee03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemNeeded: {fileID: 11400000, guid: 5c339e616f9f8a645ae4c64762359d68, type: 2}
@@ -4737,7 +4737,7 @@ GameObject:
   - component: {fileID: 1423540227}
   - component: {fileID: 1423540226}
   - component: {fileID: 1423540225}
-  - component: {fileID: 1423540224}
+  - component: {fileID: 1423540228}
   m_Layer: 0
   m_Name: ItemPoint2
   m_TagString: Untagged
@@ -4760,20 +4760,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 332140654}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1423540224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423540222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemNeeded: {fileID: 11400000, guid: 9df7c71edfaea574da1ff477cfbb52f3, type: 2}
-  manager: {fileID: 1607201875}
 --- !u!135 &1423540225
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4848,6 +4834,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423540222}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1423540228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423540222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dd2a6a9bbf6ae48a1db81ce26cee03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNeeded: {fileID: 11400000, guid: 9df7c71edfaea574da1ff477cfbb52f3, type: 2}
+  manager: {fileID: 1607201875}
 --- !u!1 &1428852741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5582,9 +5582,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5c339e616f9f8a645ae4c64762359d68, type: 2}
   - {fileID: 11400000, guid: 9df7c71edfaea574da1ff477cfbb52f3, type: 2}
   itemPoints:
-  - {fileID: 1191176377}
-  - {fileID: 1423540224}
-  - {fileID: 1122414001}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1697583848
 GameObject:
   m_ObjectHideFlags: 0
@@ -7205,7 +7205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000023868128}
+  m_AnchoredPosition: {x: 0, y: 0.000013079343}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2011880271
