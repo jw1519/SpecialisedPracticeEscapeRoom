@@ -15,6 +15,9 @@ public class InventoryUIManager : MonoBehaviour
     }
     public void AddItem(Item item)
     {
+        if (item == null)
+            return;
+
         GameObject itemContainer = Instantiate(this.itemContainer, inventoryContainer.transform);
 
         //set item icon and name

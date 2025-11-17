@@ -26,8 +26,10 @@ public class ChessPuzzle : MonoBehaviour
             if (piece.itemID == item.itemID)
             {
                 Inventory.Instance.RemoveItem(item);
-                item.PlaceItem(itemPoints.Find(itemPoint => item == itemPoint.itemNeeded).transform.position);
-                Debug.Log("Placed " + piece.itemName + " in correct position.");
+                Vector3 position = itemPoints.Find(itemPoint => item == itemPoint.itemNeeded).transform.position;
+                Debug.Log(position);
+                item.PlaceItem(position);
+                Debug.Log("Placed");
                 return;
             }
             

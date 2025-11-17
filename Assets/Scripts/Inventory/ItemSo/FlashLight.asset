@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: FlashLight
   itemID: FlashLight-2eca939a-8764-43b1-a3ca-5acc17a45764
   itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 4120006549087269644, guid: 74b1d93aeb749c845bb0f4aed171c8ea, type: 3}
+  isInCorrectPosition: 0
