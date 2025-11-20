@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: BlackRook
+  m_Name: BlackQueen
   m_EditorClassIdentifier: 
-  itemName: BlackRook
-  itemID: BlackRook-c61bd7d5-04f3-4049-b042-d6a81c541d82
+  itemName: BlackQueen
+  itemID: BlackQueen-3a4e9c38-8c95-4411-847c-44ab3659435e
   itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 8676559380820348568, guid: 4a464379a3f8b1a4782f9cb4dd42c13b, type: 3}
+  itemPrefab: {fileID: 7843548104588156950, guid: 2f1c593e098df6c4fbbe03e34f1335b2, type: 3}
   isInCorrectPosition: 0
