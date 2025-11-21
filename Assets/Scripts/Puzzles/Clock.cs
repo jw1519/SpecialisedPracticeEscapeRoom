@@ -7,6 +7,9 @@ public class Clock : MonoBehaviour
     public int targetHour;
     public int targetMinute;
 
+    public Transform clockFace;
+    public GameObject item;
+
     int angle = -30;
     int currentHour = 0;
     int currentMinute = 0;
@@ -53,8 +56,8 @@ public class Clock : MonoBehaviour
     }
     public void Solved()
     {
-               Debug.Log("Clock Puzzle Solved!");
-        // Additional logic for when the puzzle is solved can be added here
+        item.GetComponent<Collider>().enabled = true;
+        clockFace.rotation = Quaternion.Euler(0, 80, 0);
     }
 
 }
