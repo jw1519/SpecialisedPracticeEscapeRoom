@@ -482,7 +482,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 997416804}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999833
+  m_Size: 0.999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomView: 40
   rotation: {x: 0, y: 0, z: 0, w: 0}
-  targetPosition: {x: -1, y: 1.5, z: 1}
+  targetPosition: {x: -1, y: 2, z: 1.5}
 --- !u!4 &391579410 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4806668399190784637, guid: cbf54dbc8bc39bd459918e6231f2035a, type: 3}
@@ -1625,7 +1625,7 @@ Transform:
   m_GameObject: {fileID: 483856804}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.657, y: 1.111, z: 1.143}
+  m_LocalPosition: {x: -1.657, y: 1, z: 1.649}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7312,7 +7312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00000019971165}
+  m_AnchoredPosition: {x: 0, y: 0.0007284018}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2011880271
@@ -7396,8 +7396,6 @@ MonoBehaviour:
   minuteHand: {fileID: 7067503780223001461}
   targetHour: 5
   targetMinute: 25
-  currentHour: 0
-  currentMinute: 0
 --- !u!4 &2144170300741467592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3901534996910748446, guid: e2f6093606fd81c4a9cb8e307c68f2c6, type: 3}
@@ -7656,6 +7654,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 391579410}
     m_Modifications:
+    - target: {fileID: 2781919148631517850, guid: e2f6093606fd81c4a9cb8e307c68f2c6, type: 3}
+      propertyPath: targetPosition.x
+      value: -1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781919148631517850, guid: e2f6093606fd81c4a9cb8e307c68f2c6, type: 3}
+      propertyPath: targetPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781919148631517850, guid: e2f6093606fd81c4a9cb8e307c68f2c6, type: 3}
+      propertyPath: targetPosition.z
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3342237559088754336, guid: e2f6093606fd81c4a9cb8e307c68f2c6, type: 3}
       propertyPath: m_Name
       value: Clock
