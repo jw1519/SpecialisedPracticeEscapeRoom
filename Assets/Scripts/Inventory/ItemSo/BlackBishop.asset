@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: BlackBishop
   itemID: BlackBishop-049ded8c-f469-464e-9eb6-edc1e88ddfef
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 503a8c75746e9494e991265e34853fdc, type: 3}
   itemPrefab: {fileID: 7372335926524718719, guid: f8a13076378164d4892854da571c6233, type: 3}
+  isInCorrectPosition: 0

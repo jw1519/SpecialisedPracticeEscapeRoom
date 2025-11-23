@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Blue Key
   itemID: Blue Key-bfdc6e58-be6e-4c1a-b022-2eb5c2fe9561
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 45afe0827f0394942b180b099e3d8b99, type: 3}
   itemPrefab: {fileID: 6586380701880126115, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
   isInCorrectPosition: 0

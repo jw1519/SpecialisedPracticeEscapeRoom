@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: BlackKing
   itemID: BlackKing-d8558e0d-cc34-4864-9244-51a73b1cf38d
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: a3b55dd22816859478d29ce1a5d45b08, type: 3}
   itemPrefab: {fileID: 2410920027267053739, guid: 952b062e2ae04b74399d4feb5775ee92, type: 3}
+  isInCorrectPosition: 0

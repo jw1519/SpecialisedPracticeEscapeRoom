@@ -22,8 +22,7 @@ public class InventoryUIManager : MonoBehaviour
 
         //set item icon and name
         Image itemImage = itemContainer.GetComponent<Image>();
-        if (itemImage.sprite != null)
-            itemImage.sprite = item.itemIcon;
+        itemImage.sprite = item.itemIcon;
         itemContainer.name = item.itemID;
 
         //add button listener
