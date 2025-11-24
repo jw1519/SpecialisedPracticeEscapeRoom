@@ -31,4 +31,8 @@ public class CabinetDoor : MonoBehaviour
     {
         right, left,
     }
+    public void unlock(Item item)
+    {
+
+    }
 }
