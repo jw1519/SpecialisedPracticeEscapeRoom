@@ -18,7 +18,7 @@ public class ZoomManager : MonoBehaviour
     }
     private void Update()
     {
-        delay = delay + Time.deltaTime;
+        delay += Time.deltaTime;
     }
     public void RegisterZoom(Zoom zoom)
     {
