@@ -57,7 +57,7 @@ public class Clock : MonoBehaviour
     public void Solved()
     {
         item.GetComponent<Collider>().enabled = true;
-        clockFace.rotation = Quaternion.Euler(0, 80, 0);
+        clockFace.localRotation = Quaternion.Euler(0, -90, 0);
     }
 
 }

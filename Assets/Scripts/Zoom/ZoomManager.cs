@@ -22,11 +22,11 @@ public class ZoomManager : MonoBehaviour
     }
     public void RegisterZoom(Zoom zoom)
     {
-        if (delay < 1) return; //delay this working so it has time to unregister zooms
-        else
-        {
-            delay = 0;
-        }
+        //if (delay < 1) return; //delay this working so it has time to unregister zooms
+        //else
+        //{
+        //    delay = 0;
+        //}
         if (!currentZooms.Contains(zoom))
         {
             currentZooms.Add(zoom);
