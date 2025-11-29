@@ -14,6 +14,13 @@ public class Zoom : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        // check for UI interaction
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+        // check for touch input (mobile)
+        else if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+            return;
+
         ZoomIn();
     }
     public void ZoomIn()

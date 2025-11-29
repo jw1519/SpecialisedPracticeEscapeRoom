@@ -36,6 +36,10 @@ public class Inventory : MonoBehaviour
     }
     public void SelectItem(Item item)
     {
+        if (item.itemName == "FlashLight")
+        {
+            item.UseItem();
+        }
         // mae sure item isnt already selected
         if (selectedItem == item)
             return;
