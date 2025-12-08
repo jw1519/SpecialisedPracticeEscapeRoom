@@ -17,17 +17,8 @@ public class InventoryUIManager : MonoBehaviour
     {
         if (item == null)
             return;
-
-        GameObject itemContainer = Instantiate(this.itemContainer, inventoryContainer.transform);
-
-        //set item icon and name
-        Image itemImage = itemContainer.GetComponent<Image>();
-        itemImage.sprite = item.itemIcon;
-        itemContainer.name = item.itemID;
-
-        //add button listener
-        Button itemButton = itemContainer.GetComponent<Button>();
-        itemButton.onClick.AddListener(() => Inventory.Instance.SelectItem(item));
+        itemContainer.GetComponent<ItemUI>().SetItem(item);
+        Instantiate(this.itemContainer, inventoryContainer.transform);
     }
     public void RemoveItem(Item item)
     {
