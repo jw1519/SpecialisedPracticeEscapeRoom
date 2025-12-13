@@ -3,34 +3,17 @@ using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
-    public int movementSpeed;
-    CharacterController characterController;
-
-    private void Awake()
+    public GameObject leftButton;
+    public GameObject rightButton;
+    private void OnEnable()
     {
-        characterController = GetComponent<CharacterController>();
+        ZoomManager.Instance.onZoomIn += DisableButtons;
+        ZoomManager.Instance.onZoomOut += EnableButtons;
     }
-    private void Start()
+    private void OnDisable()
     {
-        GyroManager.Instance.EnableGyro();
-    }
-    private void FixedUpdate()
-    {
-        if (!GyroManager.Instance.isGyroActive) return;
-        transform.localRotation = GyroManager.Instance.rotation;
-        Move();
-    }
-    void Move()
-    {
-        if (characterController != null)
-        {
-            Vector3 acceleration = Accelerometer.current.acceleration.ReadValue();
-
-            Vector3 moveDirection = new(acceleration.x * movementSpeed * Time.deltaTime, 0, -acceleration.z * movementSpeed * Time.deltaTime);
-            Vector3 transformedDirection = transform.TransformDirection(moveDirection);
-
-            characterController.Move(transformedDirection);
-        }
+        ZoomManager.Instance.onZoomIn -= DisableButtons;
+        ZoomManager.Instance.onZoomOut -= EnableButtons;
     }
     public void TurnLeft()
     {
@@ -39,5 +22,15 @@ public class CameraController : MonoBehaviour
     public void TurnRight()
     {
         gameObject.transform.Rotate(0, 90, 0);
+    }
+    public void DisableButtons()
+    {
+        leftButton.SetActive(false);
+        rightButton.SetActive(false);
+    }
+    public void EnableButtons()
+    {
+        leftButton.SetActive(true);
+        rightButton.SetActive(true);
     }
 }
