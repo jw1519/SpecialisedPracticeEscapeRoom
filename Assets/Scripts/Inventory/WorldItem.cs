@@ -12,6 +12,6 @@ public class WorldItem : MonoBehaviour
         //pick up item
         Inventory.Instance.AddItem(itemSO);
         itemSO.isInCorrectPosition = false;
-        Destroy(gameObject);
+        ItemPool.Instance.AddItem(gameObject);
     }
 }

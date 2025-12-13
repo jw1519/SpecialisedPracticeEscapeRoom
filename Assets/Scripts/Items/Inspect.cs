@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,8 +7,7 @@ public class Inspect : MonoBehaviour
 {
     public static Inspect instance;
 
-    public GameObject objectPrefab;
-    Transform objectToInspect;
+    GameObject objectToInspect;
     public float rotationSpeed;
     public GameObject backButton;
     Vector3 cameraPosition;
@@ -21,16 +21,21 @@ public class Inspect : MonoBehaviour
         cam = Camera.main;
         gameObject.SetActive(false);
     }
-    public void EnableInspect(GameObject obj)
+    public void EnableInspect(Item item)
     {
-        objectPrefab = obj;
-        if (objectPrefab != null)
+        if (objectToInspect != null)
+        {
+            DisableInspect();
+        }
+        objectToInspect = ItemPool.Instance.GetItem(item.itemID);
+        if (objectToInspect != null)
         {
             gameObject.SetActive(true);
             backButton.SetActive(true);
-            GameObject instance = Instantiate(objectPrefab, transform);
-            objectPrefab = instance;
-            objectToInspect = objectPrefab.transform;
+
+            objectToInspect.transform.SetParent(transform);
+            objectToInspect.transform.localPosition = Vector3.zero;
+            objectToInspect.GetComponent<Collider>().enabled = false;
             // keep original position and roation
             cameraPosition = cam.transform.localPosition;
             cameraRotation = cam.transform.rotation;
@@ -41,11 +46,12 @@ public class Inspect : MonoBehaviour
     }
     public void DisableInspect()
     {
-        Destroy(objectPrefab);
+        objectToInspect.GetComponent<Collider>().enabled = true;
+        ItemPool.Instance.AddItem(objectToInspect);
+
         objectToInspect = null;
         gameObject.SetActive(false);
         backButton.SetActive(false);
-
         //put camera back
         cam.transform.localPosition = cameraPosition;
         cam.transform.rotation = cameraRotation;
@@ -64,7 +70,7 @@ public class Inspect : MonoBehaviour
             float rotationX = -deltaMoutsePosition.y * rotationSpeed * Time.deltaTime;
             float rotationY = -deltaMoutsePosition.x * rotationSpeed * Time.deltaTime;
             Quaternion rotation = Quaternion.Euler(rotationX, rotationY, 0);
-            objectToInspect.rotation = rotation * objectToInspect.rotation;
+            objectToInspect.transform.rotation = rotation * objectToInspect.transform.rotation;
             previousMousePosition = Input.mousePosition;
         }
     }

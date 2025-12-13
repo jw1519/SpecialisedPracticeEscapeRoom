@@ -21,6 +21,6 @@ public class ItemUI : MonoBehaviour
         Button itemButton = GetComponent<Button>();
         itemButton.onClick.AddListener(() => Inventory.Instance.SelectItem(item));
 
-        inspectButton.onClick.AddListener(() => Inspect.instance.EnableInspect(item.itemPrefab));
+        inspectButton.onClick.AddListener(() => Inspect.instance.EnableInspect(item));
     }
 }
