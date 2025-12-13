@@ -32,4 +32,12 @@ public class CameraController : MonoBehaviour
             characterController.Move(transformedDirection);
         }
     }
+    public void TurnLeft()
+    {
+        gameObject.transform.Rotate(0, -90, 0);
+    }
+    public void TurnRight()
+    {
+        gameObject.transform.Rotate(0, 90, 0);
+    }
 }
